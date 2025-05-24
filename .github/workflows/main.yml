@@ -28,8 +28,15 @@ jobs:
           pip install -r requirements.txt
           pip install pytest flake8
 
+      - name: List files in workspace (debug)
+        run: |
+          pwd
+          ls -R
+          cat test_app.py
+          cat conftest.py || echo "No conftest.py found"
+
       - name: Run pytest
-        run: pytest test_app.py
+        run: pytest -v --capture=tee-sys
 
       - name: Code quality check
         run: flake8 .
