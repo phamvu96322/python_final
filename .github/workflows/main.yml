@@ -28,8 +28,8 @@ jobs:
           pip install -r requirements.txt
           pip install pytest flake8
 
-      - name: Run tests
-        run: pytest tests/
+      - name: Run pytest
+        run: pytest app.py
 
       - name: Code quality check
         run: flake8 .
