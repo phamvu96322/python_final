@@ -29,7 +29,7 @@ jobs:
           pip install pytest flake8
 
       - name: Run pytest
-        run: pytest app.py
+        run: pytest 
 
       - name: Code quality check
         run: flake8 .
